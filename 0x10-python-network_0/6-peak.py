@@ -5,18 +5,17 @@ function that finds a peak in a list of unsorted integers.
 
 
 def find_peak(list_of_integers):
-    lof = list_of_integers
-    l = 0
-    r = len(lof) - 1
+    a = 0
+    b = len(list_of_integers) - 1
 
-    if len(lof) == 0:
+    if len(list_of_integers) == 0:
         return(None)
-    else:
-        while (l < r):
-            mid = int((l + r) / 2)
-            if lof[mid] < lof[mid + 1]:
-                l = mid + 1
-            else:
-                r = mid
 
-        return(lof[l])
+    while (a < b):
+        m = int((a + b) / 2)
+        if list_of_integers[m] < list_of_integers[m + 1]:
+            a = m + 1
+        else:
+            b = m
+
+    return(list_of_integers[a])
